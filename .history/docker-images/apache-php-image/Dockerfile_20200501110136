@@ -1,6 +1,0 @@
-# PHP with apache
-
-FROM php:7.2-apache
-
-# /var/www/html/ container file system arborescence
-COPY src/ /var/www/html/
