@@ -1,0 +1,1 @@
+sudo docker run res/express_students
