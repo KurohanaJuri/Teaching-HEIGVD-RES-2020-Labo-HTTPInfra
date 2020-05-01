@@ -1,0 +1,25 @@
+/*
+	RES - Labo 4
+	Style for the home page
+*/
+
+body {
+  background: linear-gradient(90deg, rgba(0,143,255,1) 0%, rgba(0,203,255,1) 100%);
+}
+
+h1 {
+  color: white;
+  font-family: Arial;
+  font-size: 28px;
+  margin-left: 10px;
+  font-weight: bold;
+  margin-bottom: -10px;
+}
+
+h2 {
+  color: white;
+  font-family: Arial;
+  font-size: 15px;
+  margin-left: 10px;
+  font-weight: normal;	
+}
