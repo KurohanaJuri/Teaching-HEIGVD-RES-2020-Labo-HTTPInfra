@@ -22,6 +22,7 @@ For the static server, we used [Apache's httpd container for php](https://hub.do
 Todo : used express.js
 
 <a name="setup"/>
+
 ## 2. Setup
 
 ### 2.1 Launching the static server 
