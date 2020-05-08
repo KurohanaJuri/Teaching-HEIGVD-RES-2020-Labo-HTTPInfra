@@ -8,9 +8,13 @@
 
 <a name="beforestarting"/>
 
-## 0.
+## 0. Before starting
 
-This projet is tested on Ubuntu 18.04
+Before you can start launching servers left and right, make sure you have the proper setup. Here are the tools we used and that you will need to get the full experience : 
+
+| Windows       | Linux         |
+| ------------- |:-------------:|
+| [Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/)| [Docker Engine](https://docs.docker.com/engine/install/) |
 
 <a name="config"/>
 
