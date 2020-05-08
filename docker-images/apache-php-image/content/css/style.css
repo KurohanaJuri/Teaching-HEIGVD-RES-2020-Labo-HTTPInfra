@@ -32,6 +32,7 @@ h2 {
 div.clock {
   width: auto;
   background-color: black;
+  outline: 3px solid lightgrey;
   color: greenyellow;
   font-family: 'digital-7';
   font-size: 80px;
