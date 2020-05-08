@@ -13,3 +13,4 @@ docker build -t res/apache_php .
 ```
 docker run -d -p 9090:80 php:7.2-apache
 ```
+* Access the server on your docker local address, i.e. http://192.168.99.101:9090/ 
