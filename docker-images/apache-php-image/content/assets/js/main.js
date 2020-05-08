@@ -1,54 +1,32 @@
-/**
-* Template Name: Siimple - v2.0.1
-* Template URL: https://bootstrapmade.com/free-bootstrap-landing-page/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-!(function($) {
-  "use strict";
+// Set the date we're counting down to
+var countDownDate = new Date("Jan 5, 2021 15:37:25").getTime();
 
-  // Toggle nav menu
-  $(document).on('click', '.nav-toggle', function(e) {
-    $('.nav-menu').toggleClass('nav-menu-active');
-    $('.nav-toggle').toggleClass('nav-toggle-active');
-    $('.nav-toggle i').toggleClass('bx-x bx-menu');
+// Update the count down every 1 second
+var x = setInterval(function() {
 
-  });
+  // Get today's date and time
+  var now = new Date().getTime();
 
-  // Toogle nav menu drop-down items
-  $(document).on('click', '.nav-menu .drop-down > a', function(e) {
-    e.preventDefault();
-    $(this).next().slideToggle(300);
-    $(this).parent().toggleClass('active');
-  });
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
 
-  // Smooth scroll for the navigation menu and links with .scrollto classes
-  $(document).on('click', '.nav-menu a, .scrollto', function(e) {
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-      e.preventDefault();
-      var target = $(this.hash);
-      if (target.length) {
+  // Time calculations for days, hours, minutes and seconds
+  var hours = Math.floor(distance / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  var milliseconds = Math.floor((distance % 1000) / 100);
 
-        var scrollto = target.offset().top;
+  // Display the result in the element with id="demo"
+  document.getElementById("clock").innerHTML = formatDeci(hours) + ":"
+  + formatDeci(minutes) + ":" + formatDeci(seconds) + "." + milliseconds;
 
-        if ($(this).attr("href") == '#header') {
-          scrollto = 0;
-        }
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("clock").innerHTML = "EXPIRED";
+  }
+}, 100);
 
-        $('html, body').animate({
-          scrollTop: scrollto
-        }, 1500, 'easeInOutExpo');
-
-        if ($(this).parents('.nav-menu').length) {
-          $('.nav-menu .active').removeClass('active');
-          $(this).closest('li').addClass('active');
-          $('.nav-menu').removeClass('nav-menu-active');
-          $('.nav-toggle').removeClass('nav-toggle-active');
-          $('.nav-toggle i').toggleClass('bx-x bx-menu');
-        }
-        return false;
-      }
-    }
-  });
-
-})(jQuery);
+function formatDeci(num) {
+  return (num < 10 ? "0" : "") + num;  
+}
