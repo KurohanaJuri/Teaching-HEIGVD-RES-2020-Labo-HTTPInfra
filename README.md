@@ -55,4 +55,4 @@ docker run -d -p 9090:80 php:7.2-apache
 * Run build-image.sh
 * Run run-container.sh
 
-The dcynamic server listen on port 3000.
+The dynamic server listen on port 3000.
