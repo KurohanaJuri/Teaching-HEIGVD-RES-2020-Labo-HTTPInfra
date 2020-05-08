@@ -2,6 +2,10 @@
 	RES - Labo 4
 	Style for the home page
 */
+@font-face {
+  font-family: 'digital-7';
+  src: url('../fonts/digital-7.ttf');
+}
 
 body {
   background: white;
@@ -25,11 +29,13 @@ h2 {
   text-align: center;
 }
 
-h3 {
-  color: black;
-  font-family: 'Courier New';
-  font-size: 40px;
+div.clock {
+  width: auto;
+  background-color: black;
+  color: greenyellow;
+  font-family: 'digital-7';
+  font-size: 80px;
   margin: 40px;
-  font-weight: bold;	
+  font-weight: normal;	
   text-align: center;
 }
