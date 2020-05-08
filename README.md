@@ -1,5 +1,14 @@
 # Teaching-HEIGVD-RES-2020-Labo-HTTPInfra
 
+##### Table of Contents  
+[0. Before starting](#beforestarting)  
+[1. Configuration](#config)  
+[2. Setup](#setup)  
+
+<a name="beforestarting"/>
+## 0. 
+
+<a name="config"/>
 ## 1. Configuration 
 
 ### 1.1 Static server
@@ -10,6 +19,7 @@ For the static server, we used [Apache's httpd container for php](https://hub.do
 
 Todo : used express.js
 
+<a name="setup"/>
 ## 2. Setup
 
 ### 2.1 Launching the static server 
