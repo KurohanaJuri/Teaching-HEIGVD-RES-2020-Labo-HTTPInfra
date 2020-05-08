@@ -6,9 +6,11 @@
 [2. Setup](#setup)  
 
 <a name="beforestarting"/>
+
 ## 0. 
 
 <a name="config"/>
+
 ## 1. Configuration 
 
 ### 1.1 Static server
