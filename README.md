@@ -7,7 +7,13 @@
 
 <a name="beforestarting"/>
 
-## 0. 
+## 0. Before starting
+
+Before you can start launching servers left and right, make sure you have the proper setup. Here are the tools we used and that you will need to get the full experience : 
+
+| Windows       | Linux         |
+| ------------- |:-------------:|
+| [Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/)| ? |
 
 <a name="config"/>
 
