@@ -7,7 +7,13 @@
 
 <a name="beforestarting"/>
 
-## 0. 
+## 0. Before starting
+
+Before you can start launching servers left and right, make sure you have the proper setup. Here are the tools we used and that you will need to get the full experience : 
+
+| Windows       | Linux         |
+| ------------- |:-------------:|
+| [Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/)| ? |
 
 <a name="config"/>
 
@@ -22,6 +28,7 @@ For the static server, we used [Apache's httpd container for php](https://hub.do
 Todo : used express.js
 
 <a name="setup"/>
+
 ## 2. Setup
 
 ### 2.1 Launching the static server 
