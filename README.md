@@ -18,8 +18,7 @@ Before you can start launching servers left and right, make sure you have the pr
 
 <a name="config"/>
 
-## 1. Configuration 
-
+## 1. Configuration
 
 ### 1.1 Static server
 
@@ -32,6 +31,10 @@ To run a dynamic server, we need `nodejs` and `npm`, we used [node](https://hub.
 We also need Express.js framework, run `npm install express-generator -g` on the terminal, to install it as a global installation.
 
 In this project we use Express.js and chance.js, to intall the dependece run  `./install-npm-dependance.sh` in `docker-images/express-image/src/`
+
+### 1.3 Reverse proxy
+
+To have access at our site, you need to map your machine IP to our size address [demo.res.ch](demo.res.ch). In the file `hosts` (Linux : `/etc/hosts`), you need to add `YOUR_IP    demo.res.ch`. If you want to test if the IP is correctly mapped, you can ping our site address, if it's correct, you receive a response.
 
 <a name="setup"/>
 
@@ -56,3 +59,7 @@ docker run -d -p 9090:80 php:7.2-apache
 * Run run-container.sh
 
 The dynamic server listen on port 3000.
+
+### 2.3
+
+The IP of the 2 container (static server and the dynamic server) are hardcoded. In our case the apache static is on 172.17.0.2:80 and the express dynamic is on 172.18.0.3:3000
