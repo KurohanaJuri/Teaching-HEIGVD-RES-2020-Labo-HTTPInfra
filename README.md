@@ -39,10 +39,10 @@ To have access at our site, you need to map your machine IP to our size address 
 <a name="setup"/>
 
 ## 2. Setup
+Before doing anything make sure to download this repository :)
 
 ### 2.1 Launching the static server 
 
-* Download this repository
 * Start docker and go to your local repository directory and build the container with the command in the folder  `docker-images/apache-php-image`: 
 ```
 docker build -t res/apache_php .
