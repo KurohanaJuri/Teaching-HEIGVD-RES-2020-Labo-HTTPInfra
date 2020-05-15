@@ -39,11 +39,14 @@ To have access at our site, you need to map your machine IP to our size address 
 <a name="setup"/>
 
 ## 2. Setup
-Before doing anything make sure to download this repository :)
+Before doing anything make sure to :
+* Download this repository
+* Start docker
+* Go to your local repository's directory in docker
 
 ### 2.1 Launching the static server 
 
-* Start docker and go to your local repository directory and build the container with the command in the folder  `docker-images/apache-php-image`: 
+* Build the container with this command in the folder  `docker-images/apache-php-image`: 
 ```
 docker build -t res/apache_php .
 ```
@@ -54,10 +57,15 @@ docker run -d -p 9090:80 php:7.2-apache
 * Access the server on your docker local address, i.e. http://192.168.99.101:9090/ 
 
 ### 2.2 Launching the dynamic server
-
-* Run build-image.sh
-* Run run-container.sh
-
+* Go into the `express-image/` directory 
+* Run the script `build-image.sh` with this command : 
+```
+./build-image.sh
+```
+* Run the script `run-container.sh` with this command : 
+```
+./run-container.sh
+```
 The dynamic server listen on port 3000.
 
 ### 2.3
