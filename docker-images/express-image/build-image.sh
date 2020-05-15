@@ -1,1 +1,3 @@
-sudo docker build -t res/express_students .
+#!/bin/bash
+
+docker build -t res/express_students .

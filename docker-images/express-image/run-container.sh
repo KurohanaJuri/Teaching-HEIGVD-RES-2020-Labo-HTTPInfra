@@ -1,1 +1,3 @@
-sudo docker run res/express_students
+#!/bin/bash
+
+docker run res/express_students
