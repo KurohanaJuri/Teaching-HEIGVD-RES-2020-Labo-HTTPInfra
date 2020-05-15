@@ -26,7 +26,7 @@ For the static server, we used [Apache's httpd container for php](https://hub.do
 
 ### 1.2 Dynamic server
 
-To run a dynamic server, we need `nodejs` ([download here](https://nodejs.org/en/)) and `npm`, we used [node](https://hub.docker.com/_/node/) with the version 12.16
+To run a dynamic server, we need `nodejs` ([download here](https://nodejs.org/en/)) and `npm`, we used [node's container](https://hub.docker.com/_/node/) with the version 12.16
 
 We also need Express.js framework, run `npm install express-generator -g` on the terminal, to install it as a global installation.
 
