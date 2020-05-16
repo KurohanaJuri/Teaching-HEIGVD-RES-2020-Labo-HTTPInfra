@@ -68,6 +68,11 @@ docker run -d -p 9090:80 php:7.2-apache
 ```
 The dynamic server listen on port 3000.
 
-### 2.3
+### 2.3 Reverse proxy with apache
 
 The IP of the 2 container (static server and the dynamic server) are hardcoded. In our case the apache static is on 172.17.0.2:80 and the express dynamic is on 172.18.0.3:3000
+
+### 2.4 AJAX requests with JQuery
+
+Every 30 seconds our website show a array of random numbers, with data comming from dynamic server.
+It's only work with the reverse proxy because the dynamc server and the static had a different IP and the reverse proxy is here to redirect differents resquests to the correct server.
