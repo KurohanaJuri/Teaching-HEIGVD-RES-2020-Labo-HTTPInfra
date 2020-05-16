@@ -31,11 +31,8 @@ exports.generateStudents = function(){
 }
 
 exports.generateRandomArray = function(nb, minVal ,maxVal){
-    var res = [];
+    var res = chance.unique(chance.integer, nb, {min : minVal, max : maxVal});
 
-    for (var i = 0; i < nb; i++){
-        res.push(chance.integer({min : minVal, max : maxVal}));
-    }
 
     console.log(res);
     return res;
