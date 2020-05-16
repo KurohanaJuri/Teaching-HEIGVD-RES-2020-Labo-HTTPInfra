@@ -1,0 +1,3 @@
+docker kill apache_static express_dynamic reverse_proxy
+
+docker rm apache_static express_dynamic reverse_proxy

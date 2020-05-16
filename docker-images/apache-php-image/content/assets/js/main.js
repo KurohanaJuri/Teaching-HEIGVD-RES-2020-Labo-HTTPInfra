@@ -30,3 +30,12 @@ var x = setInterval(function() {
 function formatDeci(num) {
   return (num < 10 ? "0" : "") + num;  
 }
+
+exports.setCounter = function(interval){
+  setInterval(function(){
+
+    document.getElementById("counter").innerHTML = interval-1;
+  }, 1000)
+}
+
+
