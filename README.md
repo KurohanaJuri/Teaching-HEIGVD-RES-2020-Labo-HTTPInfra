@@ -40,7 +40,7 @@ To have access at our site, you need to map your machine IP to our size address 
 
 ## 2. Setup
 Before doing anything make sure to :
-* Download this repository
+* Download or clone this repository
 * Start docker
 * Go to your local repository's directory in docker
 
@@ -58,14 +58,8 @@ docker run -d -p 9090:80 php:7.2-apache
 
 ### 2.2 Launching the dynamic server
 * Go into the `express-image/` directory 
-* Run the script `build-image.sh` with this command : 
-```
-./build-image.sh
-```
-* Run the script `run-container.sh` with this command : 
-```
-./run-container.sh
-```
+* Run the script `build-image.sh` 
+* Run the script `run-container.sh`
 The dynamic server listen on port 3000.
 
 ### 2.3 Reverse proxy with apache
