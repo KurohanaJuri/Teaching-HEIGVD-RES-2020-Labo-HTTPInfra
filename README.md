@@ -46,18 +46,16 @@ Before doing anything make sure to :
 
 ### 2.1 Launching the static server 
 
-* Build the container with this command in the folder  `docker-images/apache-php-image`: 
-```
-docker build -t res/apache_php .
-```
-* Run the container to start the server on the port 9090 :
-```
-docker run -d -p 9090:80 php:7.2-apache
-```
+* Go into the `docker-images/apache-php-image/` directory 
+* Run the script `build-image.sh` 
+* Run the script `run-container.sh`
 * Access the server on your docker local address, i.e. http://192.168.99.101:9090/ 
 
+#### Troubleshoot : 403 Forbidden
+If you get this error while launching the server then it might be because the files weren't copied properly.
+
 ### 2.2 Launching the dynamic server
-* Go into the `express-image/` directory 
+* Go into the `docker-images/express-image/` directory 
 * Run the script `build-image.sh` 
 * Run the script `run-container.sh`
 The dynamic server listen on port 3000.
