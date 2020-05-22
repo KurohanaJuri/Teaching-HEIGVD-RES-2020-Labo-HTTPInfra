@@ -52,7 +52,7 @@ Before doing anything make sure to :
 * Access the server on your docker local address, i.e. http://192.168.99.101:9090/ 
 
 #### Troubleshoot : 403 Forbidden
-If you get this error while launching the server then it might be because the files weren't copied properly.
+If you get this error while launching the server then it might be because the files weren't copied properly. [TODO]
 
 ### 2.2 Launching the dynamic server
 * Go into the `docker-images/express-image/` directory 
