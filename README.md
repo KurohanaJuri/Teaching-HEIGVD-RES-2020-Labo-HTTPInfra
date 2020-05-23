@@ -52,7 +52,9 @@ Before doing anything make sure to :
 * Access the server on your docker local address, i.e. http://192.168.99.101:9090/ 
 
 ### 2.2 Launching the dynamic server
-* Go into the `docker-images/express-image/` directory 
+* Go into the `docker-images/express-image/src` directory 
+* Run the script `install-npm-dependance.sh`
+* Go back to `docker-images/express-image`
 * Run the script `build-image.sh` 
 * Run the script `run-container.sh`
 The dynamic server listen on port 3000.
