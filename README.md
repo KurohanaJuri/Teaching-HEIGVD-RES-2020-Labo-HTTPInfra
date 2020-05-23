@@ -74,3 +74,8 @@ The IP of the 2 container (static server and the dynamic server) are hardcoded. 
 
 Every 30 seconds our website show a array of random numbers, with data comming from dynamic server.
 It's only work with the reverse proxy because the dynamc server and the static had a different IP and the reverse proxy is here to redirect differents resquests to the correct server.
+
+
+### 2.5 Dynamic reverse proxy configuration
+
+Our containers can be launch autonomous without any configuration. The script in `docker_images` seach the static and dynamic servers IP to pass to the reverse proxy container.
