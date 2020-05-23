@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Apache
 docker build -t res/apache_php apache-php-image
 
