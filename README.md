@@ -52,7 +52,7 @@ Before doing anything make sure to :
 * Access the server on your docker local address, i.e. http://192.168.99.101:9090/ 
 
 #### Results
-You should be able to see the author of this lab and a countdown to its deadline :
+You should be able to see the author of this lab and a countdown to its deadline.
 
 
 ### 2.2 Launching the dynamic server
