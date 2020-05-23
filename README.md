@@ -51,13 +51,20 @@ Before doing anything make sure to :
 * Run the script `run-container.sh`
 * Access the server on your docker local address, i.e. http://192.168.99.101:9090/ 
 
+#### Results
+You should be able to see the author of this lab and a countdown to its deadline :
+
+
 ### 2.2 Launching the dynamic server
 * Go into the `docker-images/express-image/src` directory 
 * Run the script `install-npm-dependance.sh`
 * Go back to `docker-images/express-image`
 * Run the script `build-image.sh` 
 * Run the script `run-container.sh`
-The dynamic server listen on port 3000.
+* Access the server on your docker local address, i.e. http://192.168.99.101:9090/ 
+
+#### Results
+You should see the JSON array of random numbers :
 
 ### 2.3 Reverse proxy with apache
 
