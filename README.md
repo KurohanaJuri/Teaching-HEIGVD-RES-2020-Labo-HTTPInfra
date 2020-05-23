@@ -64,7 +64,7 @@ You should be able to see the author of this lab and a countdown to its deadline
 * Access the server on your docker local address, i.e. http://192.168.99.101:9090/ 
 
 #### Results
-You should see the JSON array of random numbers :
+You should see the JSON array of random numbers as such : `[38,11,12,50,35]`
 
 ### 2.3 Reverse proxy with apache
 
