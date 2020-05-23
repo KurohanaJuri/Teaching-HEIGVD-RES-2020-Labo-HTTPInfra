@@ -79,6 +79,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   }
 }
 
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -168,6 +169,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
 .nav-toggle-active {
   right: 275px;
 }
+
 
 /*--------------------------------------------------------------
 # Hero Section
@@ -368,24 +370,37 @@ section {
   color: #666666;
 }
 
+.random{
+  width: 100%;
+  text-align: center;
+  font-size: 60px;
+  font-weight: 300;
+}
+
 
 /*--------------------------------------------------------------
-# Footer
+# About
 --------------------------------------------------------------*/
-#footer {
-  background: black;
-  padding: 30px 0;
-  color: #fff;
-  font-size: 14px;
+.about h3 {
+  font-weight: 300;
+  font-size: 26px;
 }
 
-#footer .copyright {
-  text-align: center;
+.about ul {
+  list-style: none;
+  padding: 0;
 }
 
-#footer .credits {
-  padding-top: 10px;
-  text-align: center;
-  font-size: 13px;
-  color: #fff;
+.about ul li {
+  padding-bottom: 10px;
+}
+
+.about ul i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: #fd680e;
+}
+
+.about p:last-child {
+  margin-bottom: 0;
 }

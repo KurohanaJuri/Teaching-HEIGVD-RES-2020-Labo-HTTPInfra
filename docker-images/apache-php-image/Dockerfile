@@ -1,6 +1,8 @@
 # PHP with apache
-
 FROM php:7.2-apache
+
+# install nano
+RUN apt-get update && apt-get install nano
 
 # /var/www/html/ container file system arborescence
 # Static copy
