@@ -9,6 +9,7 @@ docker run -d --name express_dynamic res/express_students
 ip_static=$(docker inspect -f "{{ .NetworkSettings.IPAddress }}"  apache_static )
 echo $ip_static
 
+
 ip_dynamic=$(docker inspect -f "{{ .NetworkSettings.IPAddress }}"  express_dynamic )
 echo $ip_dynamic
 
