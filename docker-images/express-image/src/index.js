@@ -3,8 +3,7 @@ var app = express();
 
 var gs = require('./randomGenerator.js')
 
-
-// If GET and taget resources is a '/', we execute the callback
+// If GET and tager resources is a '/', we execute the callback
 app.get('/', function(req, res){
     res.send(gs.generateRandomArray(5,1,50));
 });
