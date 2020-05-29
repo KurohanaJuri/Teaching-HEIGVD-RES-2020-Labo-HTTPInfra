@@ -8,6 +8,10 @@ app.get('/', function(req, res){
     res.send(gs.generateRandomArray(5,1,50));
 });
 
+app.get('/ip/', function(req, res){    
+    res.send(require("os").networkInterfaces());
+});
+
 // Listen at port 3000
 app.listen(3000, function(){
     console.log('Acception resuqueste on port 3000');

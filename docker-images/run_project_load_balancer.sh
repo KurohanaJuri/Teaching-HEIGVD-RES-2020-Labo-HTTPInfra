@@ -12,7 +12,7 @@ docker run -d --name express_dynamic_1 res/express_students
 docker run -d --name express_dynamic_2 res/express_students
 docker run -d --name express_dynamic_3 res/express_students
 
-
+echo 'static ip'
 ip_static_1=$(docker inspect -f "{{ .NetworkSettings.IPAddress }}"  apache_static_1 )
 echo $ip_static_1
 ip_static_2=$(docker inspect -f "{{ .NetworkSettings.IPAddress }}"  apache_static_2 )
@@ -21,6 +21,7 @@ ip_static_3=$(docker inspect -f "{{ .NetworkSettings.IPAddress }}"  apache_stati
 echo $ip_static_3
 
 
+echo 'dynamic ip'
 ip_dynamic_1=$(docker inspect -f "{{ .NetworkSettings.IPAddress }}"  express_dynamic_1 )
 echo $ip_dynamic_1
 ip_dynamic_2=$(docker inspect -f "{{ .NetworkSettings.IPAddress }}"  express_dynamic_2 )

@@ -10,29 +10,40 @@
 ?>
 
 <VirtualHost *:80>
+    # Website url
     ServerName demo.res.ch
-
-    ProxyRequests Off
-    ProxyPreserveHost On
-
+    
+    # Balancer for the dynamic server with a name
+    # The name is used for the sticky session
     <Proxy balancer://dynamic-balancer>
+        # Server 1
         BalancerMember http://<?php print "$dynamic_app_1"?> route=dynamic_1
+        # Server 2
         BalancerMember http://<?php print "$dynamic_app_2"?> route=dynamic_2
+        # Server 3
         BalancerMember http://<?php print "$dynamic_app_3"?> route=dynamic_3
+        # Balance by requests same as a round robin
+        # Ensure that each get their configured share og the number of requests
         ProxySet lbmethod=byrequests
         ProxySet stickysession=ROUTEID
     </Proxy>
 
+    # Balancer for the static server
     <Proxy balancer://static-balancer>
-        BalancerMember http://<?php print "$static_app_1"?> route=static_1
-        BalancerMember http://<?php print "$static_app_2"?> route=static_2
-        BalancerMember http://<?php print "$static_app_3"?> route=static_3
+        # Server 1
+        BalancerMember http://<?php print "$static_app_1"?>/
+        # Server 2
+        BalancerMember http://<?php print "$static_app_2"?>/
+        # Server 3
+        BalancerMember http://<?php print "$static_app_3"?>/
+        # Balance by requests
         ProxySet lbmethod=byrequests
-        ProxySet stickysession=ROUTEID
     </Proxy>
 
+    # Add cookie in the request
     Header add Set-Cookie "ROUTEID=.%{BALANCER_WORKER_ROUTE}e; path=/" env=BALANCER_ROUTE_CHANGED
 
+    # Prevet that the acces to the manger isn't routed to the backend server
     ProxyPass /balancer-manager !
 
     ProxyPass '/api/students/' 'balancer://dynamic-balancer/'
@@ -41,6 +52,7 @@
     ProxyPass '/' 'balancer://static-balancer/'
     ProxyPassReverse '/' 'balancer://static-balancer/'
 
+    # Enable the manager
     <Location "/balancer-manager">
         SetHandler balancer-manager
         Order Deny,Allow

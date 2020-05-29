@@ -1,4 +1,14 @@
 $(function () {
+  // Get the server ip
+  function loadIp() {
+    $.getJSON("/api/students/ip/", function (ip) {
+      console.log(ip.eth0[0].address);
+
+      $("#ipDynamic").text(ip.eth0[0].address);
+    });
+  }
+  loadIp();
+
   console.log("Loading values");
 
   var interval = 30000;
