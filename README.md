@@ -97,4 +97,17 @@ Theses balancers are balanced with a round robin alogorithm (named `byrequests` 
 
 The client need to communicate us the session id. When the dynamic server send a response ot the client, the reverse proxy add the cookie with the session id in the resquest header.
 
-To validate our balancer, we enable the blancer manager, this interface allow us the see the traffic beetween our servers. 
+To validate our balancer, we enable the blancer manager, this interface allow us the see the traffic beetween our servers.
+
+### Management UI
+
+For the mangement we use Portainer, as explain in their tutorial, we run these commandes, they are for linux host, for other OS, see [https://www.portainer.io/installation/]()
+
+```
+$ docker volume create portainer_data
+$ docker run -d -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
+```
+
+To acces our management UI, we open our browser and go to [localhost:9000](). The first time we open the manager, we need to create a account and select the local management.
+
+![](images/portainer.png)
