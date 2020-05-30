@@ -101,7 +101,7 @@ To validate our balancer, we enable the blancer manager, this interface allow us
 
 ### Management UI
 
-For the mangement we use Portainer, as explain in their tutorial, we run these commandes, they are for linux host, for other OS, see [https://www.portainer.io/installation/]()
+For the mangement we use Portainer, as explain in their tutorial, we run these commandes,(**Caution** ! they are for linux host, for other OS, see [https://www.portainer.io/installation/]())
 
 ```
 $ docker volume create portainer_data
