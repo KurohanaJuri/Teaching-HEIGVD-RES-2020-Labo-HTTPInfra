@@ -79,3 +79,22 @@ It's only work with the reverse proxy because the dynamc server and the static h
 ### 2.5 Dynamic reverse proxy configuration
 
 Our containers can be launch autonomous without any configuration. The script in `docker_images` seach the static and dynamic servers IP to pass to the reverse proxy container.
+
+## Bonus
+
+### Load Balancing
+
+The load Balancing is implemented in the branch `fb_laod_balancer`, this branche isn't merge into `master`. We have 3 contaieners for the static servers and 3 containers for the dynamic servers, the dynamic cluster implements the sticky session.
+
+We use a template (`config-template-load-balancer.php`) to write the reverse proxy server configuration.
+
+Each server type (static and dynamic) possesses their cluster in the reverse proxy containter.
+
+* `balancer://dynamic-balancer` : Indicate the adresses use for the dynamic server, this balancer impelments sticky session. We need to indicate a name for the route, this name is used to set the route id in the cookie.
+* `balncer://static-balancer` : Indicate the adresses use for the static server
+
+Theses balancers are balanced with a round robin alogorithm (named `byrequests` in apache).
+
+The client need to communicate us the session id. When the dynamic server send a response ot the client, the reverse proxy add the cookie with the session id in the resquest header.
+
+To validate our balancer, we enable the blancer manager, this interface allow us the see the traffic beetween our servers. 
