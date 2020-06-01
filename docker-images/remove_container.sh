@@ -1,3 +1,5 @@
-docker kill apache_static express_dynamic reverse_proxy
+#!/bin/bash
 
-docker rm apache_static express_dynamic reverse_proxy
+docker container stop $(docker container ls -aq)
+
+docker container rm $(docker container ls -aq)
