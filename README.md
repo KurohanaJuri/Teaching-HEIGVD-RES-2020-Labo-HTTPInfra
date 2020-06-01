@@ -16,13 +16,16 @@ Before you can start launching servers left and right, make sure you have the pr
 | ------------- |:-------------:|
 | [Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/)| [Docker Engine](https://docs.docker.com/engine/install/) |
 
+
+This project is tested on Ubuntu 18.04 and Docker version 19.03.8 
+
 <a name="config"/>
 
 ## 1. Configuration
 
 ### 1.1 Static server
 
-For the static server, we used [Apache's httpd container for php](https://hub.docker.com/_/php/).
+For the static server, we used [Apache's httpd container for php](https://hub.docker.com/_/php/) (version php:7.2-apache)
 
 ### 1.2 Dynamic server
 
@@ -35,6 +38,8 @@ In this project we use Express.js and chance.js, to intall the dependece run  `.
 ### 1.3 Reverse proxy
 
 To have access at our site, you need to map your machine IP to our size address [demo.res.ch](demo.res.ch). In the file `hosts` (Linux : `/etc/hosts`), you need to add `YOUR_IP    demo.res.ch`. If you want to test if the IP is correctly mapped, you can ping our site address, if it's correct, you receive a response.
+
+We use a apache container (php:7.2-apache) for this proxy. 
 
 <a name="setup"/>
 
@@ -75,16 +80,19 @@ The IP of the 2 container (static server and the dynamic server) are hardcoded. 
 Every 30 seconds our website show a array of random numbers, with data comming from dynamic server.
 It's only work with the reverse proxy because the dynamc server and the static had a different IP and the reverse proxy is here to redirect differents resquests to the correct server.
 
-
 ### 2.5 Dynamic reverse proxy configuration
 
-Our containers can be launch autonomous without any configuration. The script in `docker_images` seach the static and dynamic servers IP to pass to the reverse proxy container.
+To build the final step, make sure that all previous container are kill and remove to avoid name conflict (You can use `remove_container.sh` in `docker-images/`).
+Run `build_project.sh` to build our 3 containers, and run `run_project.sh` to start the containers. The IPs needed for reverse proxy is added dynmamicly as environement variables.
 
 ## Bonus
 
 ### Load Balancing
 
-The load Balancing is implemented in the branch `fb_laod_balancer`, this branche isn't merge into `master`. We have 3 contaieners for the static servers and 3 containers for the dynamic servers, the dynamic cluster implements the sticky session.
+The load Balancing is implemented in the branch `fb_laod_balancer`, this branche isn't merge into `master`. The script to launche the projet with load balancer is in `run_project_load_lanacer.sh`
+
+We have 3 contaieners for the static servers and 3 containers for the dynamic servers, the dynamic cluster implements the sticky session.
+
 
 We use a template (`config-template-load-balancer.php`) to write the reverse proxy server configuration.
 
@@ -99,6 +107,7 @@ The client need to communicate us the session id. When the dynamic server send a
 
 To validate our balancer, we enable the blancer manager, this interface allow us the see the traffic beetween our servers.
 
+
 ### Management UI
 
 For the mangement we use Portainer, as explain in their tutorial, we run these commandes,(**Caution** ! they are for linux host, for other OS, see [https://www.portainer.io/installation/]())
@@ -107,6 +116,8 @@ For the mangement we use Portainer, as explain in their tutorial, we run these c
 $ docker volume create portainer_data
 $ docker run -d -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
 ```
+
+These steps are resume in the script `managerUI.sh`
 
 To acces our management UI, we open our browser and go to [localhost:9000](). The first time we open the manager, we need to create a account and select the local management.
 
