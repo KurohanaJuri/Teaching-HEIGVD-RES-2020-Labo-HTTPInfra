@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install nano
 # Copy our version of the script
 COPY apache2-foreground /usr/local/bin/
 
-# Copy templte dir
+# Copy template dir
 COPY templates /var/apache2/templates
 
 COPY conf/ /etc/apache2/
