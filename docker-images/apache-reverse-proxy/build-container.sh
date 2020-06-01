@@ -1,1 +1,1 @@
-sudo docker build -t res/apache_rp .
+docker build -t res/apache_rp .
