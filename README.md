@@ -89,7 +89,9 @@ Run `build_project.sh` to build our 3 containers, and run `run_project.sh` to st
 
 ### Load Balancing
 
-The load Balancing is implemented in the branch `fb_laod_balancer`, this branche isn't merge into `master`. We have 3 contaieners for the static servers and 3 containers for the dynamic servers, the dynamic cluster implements the sticky session. The script to launche the projet with load balancer is in `run_project_load_lanacer.sh`
+The load Balancing is implemented in the branch `fb_laod_balancer`, this branche isn't merge into `master`. The script to launche the projet with load balancer is in `run_project_load_lanacer.sh`
+
+We have 3 contaieners for the static servers and 3 containers for the dynamic servers, the dynamic cluster implements the sticky session.
 
 
 We use a template (`config-template-load-balancer.php`) to write the reverse proxy server configuration.
